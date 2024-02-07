@@ -1,0 +1,6 @@
+{ '.APP': ['CadEnhance RINF Output - Version 6.0.1.2'],
+  '.END': [''],
+  '.HEA': [''],
+  '.TIM': ['2016 5 5 11 36 29', 'test of 2nd bad word line'],
+  '.TYP': ['FULL'],
+  '.UNI': ['INCH 1000.0 in']}

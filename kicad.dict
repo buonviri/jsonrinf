@@ -1,0 +1,6 @@
+{ '.APP': ['Cadstar RINF Output - Version 2.3'],
+  '.END': [''],
+  '.HEA': [''],
+  '.JOB': ['PCB - ENCODER TERM RESISTORS'],
+  '.TYP': ['FULL'],
+  '.UNI': ['INCH 1000.0 in']}
