@@ -2,7 +2,7 @@ import os
 import re
 import pprint
 
-double_quotes = '"“”'
+double_quotes = '"“”'  # this string includes the standard one, chr(34), as well as the left and right versions
 
 
 def GetTokens(x):  # standard function for splitting strings containing quoted strings
@@ -12,7 +12,7 @@ def GetTokens(x):  # standard function for splitting strings containing quoted s
 
 
 def convert(lines):
-    info = {}  # blank dict for storing all netlist info
+    info = {'comps': {}, 'nets': {}}  # blank dict for storing all netlist info
     lastline = ''  # contains keyword of last line
     # list of words that aren't useful:
     badwords = {'.HEA': 'header',
@@ -45,28 +45,42 @@ def convert(lines):
                 info[line[0:4]] = [line[4:].strip().strip(double_quotes),]  # make new list
         elif line[0:4] in keywords:  # matches known keyword
             lastline = line[0:4]  # save for next loop
-            if line.startswith('.ADD_TER'):
+            if line.startswith('.ADD_COM'):
                 words = GetTokens(line[8:].strip())
-                device = words[0]
+                device = words[0]  # refdes
+                devinfo = [x.strip(double_quotes) for x in words[1:]]  # list of remaining tokens with quotes removed
+                info['comps'][device] = {'part': [], 'attributes': []}  # new dictionary for this refdes
+                info['comps'][device]['part'].append(devinfo)  # add info to this refdes
+            elif line.startswith('.ATT_COM'):
+                words = GetTokens(line[8:].strip())
+                device = words[0]  # refdes
+                attrinfo = [x.strip(double_quotes) for x in words[1:]]  # list of remaining tokens with quotes removed
+                info['comps'][device]['attributes'].append(attrinfo)  # add info to this refdes, assumes ADD_COM already happened!
+            elif line.startswith('.ADD_TER'):
+                words = GetTokens(line[8:].strip())
+                device = words[0]  # refdes
                 pin = words[1]
                 netname = words[2].strip(double_quotes)
                 # note that words[3] *might* exist, as a comment
-                print(device.ljust(10) + ' ' + pin.ljust(5) + ' ' + netname)
+                info['nets'][netname] = [(device,pin),]  # create new list with one tuple
+                # print(device.ljust(10) + ' ' + pin.ljust(5) + ' ' + netname)
             elif line.startswith('.TER'):
                 words = GetTokens(line[4:].strip())
-                device = words[0]
+                device = words[0]  # refdes
                 pin = words[1]
                 # net name is inherited from earlier line
                 # note that words[2] *might* exist, as a comment
-                print(device.ljust(10) + ' ' + pin.ljust(5) + ' ' + netname)
+                info['nets'][netname].append((device,pin))  # append list with new tuple
+                # print(device.ljust(10) + ' ' + pin.ljust(5) + ' ' + netname)
         elif lastline == '.TER':  # special case, additional .TER lines don't need keyword
             words = GetTokens(line.strip())
             if len(words) > 1:  # should contain two or more words
-                device = words[0]
+                device = words[0]  # refdes
                 pin = words[1]
                 # net name is inherited from earlier line
                 # note that words[2] *might* exist, as a comment
-                print(device.ljust(10) + ' ' + pin.ljust(5) + ' ' + netname)
+                info['nets'][netname].append((device,pin))  # append list with new tuple
+                # print(device.ljust(10) + ' ' + pin.ljust(5) + ' ' + netname)
             else:
                 print('Bad line: ' + line)
         else:
@@ -84,9 +98,12 @@ for dirname, dirnames, filenames in os.walk('.'):
             with open(name + '.frp', 'r') as f:
                 info = convert(f.readlines())  # read entire file and pass as a list
             with open(name + '.dict', 'w') as f:
-                f.write(pprint.pformat(info, indent=2))  # write using pformat
+                f.write(pprint.pformat(info, indent=2, width=200))  # write using pformat
             print('Done.\n')
 # end of main loop
 
+print('All double quotes have been removed:')
+for c in double_quotes:
+    print('  chr(' + str(ord(c)) + ')')
 os.system("PAUSE")
 # EOF

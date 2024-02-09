@@ -1,0 +1,279 @@
+.HEA
+.TIM 2/7/2024 4:27:28 PM
+.APP "Eeschema 7.0.2"
+.TYP FULL
+
+.ADD_COM     P1     "M2_KeyM_SSD-PCIe4x"     "CB_Global:M2_M-KEY_2280_AB-outline"
+.ADD_COM     C10     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C2     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     R1     "R0402_x"     "CB_Global:R_0402_1005Metric"
+.ADD_COM     C30     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C28     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C27     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C31     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C29     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C18     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C25     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C13     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C22     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C17     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C19     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C12     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     U3     "MAX77542AAWU+"     "CB_Global:MAX77542"
+.ADD_COM     C1     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C7     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C8     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C11     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     L7     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     L8     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     L1     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     L6     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     U1     "LTC3025EDC_TRPBF"     "CB_Global:DFN-6_DC"
+.ADD_COM     U2     "LTC3025EDC_TRPBF"     "CB_Global:DFN-6_DC"
+.ADD_COM     C5     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C3     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C6     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C32     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C33     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     U4     "LTC3025EDC_TRPBF"     "CB_Global:DFN-6_DC"
+.ADD_COM     C4     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     U11     "R7FA4M3AF2CBQ#BC0"     "CB_Global:BGA64C65P8X8_600X600X138"
+.ADD_COM     C16     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C20     "C0805_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C38     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C37     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C52     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C54     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C53     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C43     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C44     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C42     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C36     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C24     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C26     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     C23     "C0805_generic"     "CB_Global:C_0805_2012Metric"
+.ADD_COM     U7     "MAX77542AAWU+"     "CB_Global:MAX77542"
+.ADD_COM     C9     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C15     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C21     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     C14     "C0603_generic"     "CB_Global:C_0603_1608Metric"
+.ADD_COM     L4     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     L5     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     L2     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     L3     "IND_2520_Generic"     "CB_Global:L_1008_2520Metric"
+.ADD_COM     U9     "MT53E512M64D2HJ-046_WT_B_TR"     "CB_Global:BGA556C40P29X29_1240X1240X110"
+.ADD_COM     U10     "REN_UPD60510BF1-HN4-M1-A"     "CB_Global:BGA324_19X19_REN"
+.ADD_COM     U8     "MT53E512M64D2HJ-046_WT_B_TR"     "CB_Global:BGA556C40P29X29_1240X1240X110"
+
+
+.ADD_TER   C1   1     "/BMC/P3V3_BMC"
+.TER       C10   1
+            C11   1
+            C14   1
+            C15   1
+            C16   1
+            C2   1
+            C20   1
+            C21   1
+            C7   1
+            C8   1
+            C9   1
+            P1   12
+            P1   14
+            P1   16
+            P1   18
+            P1   2
+            P1   4
+            P1   70
+            P1   72
+            P1   74
+            U3   C1
+            U3   C10
+            U3   C2
+            U3   C9
+            U3   D1
+            U3   D10
+            U3   D2
+            U3   D9
+            U7   C1
+            U7   C10
+            U7   C2
+            U7   C9
+            U7   D1
+            U7   D10
+            U7   D2
+            U7   D9
+
+.ADD_TER   C1   2     "GND"
+.TER       C10   2
+            C11   2
+            C12   2
+            C13   2
+            C14   2
+            C15   2
+            C16   2
+            C17   2
+            C18   2
+            C19   2
+            C2   2
+            C20   2
+            C21   2
+            C22   2
+            C23   2
+            C24   2
+            C25   2
+            C26   2
+            C27   2
+            C28   2
+            C29   2
+            C3   2
+            C30   2
+            C31   2
+            C32   2
+            C33   2
+            C36   2
+            C37   2
+            C38   2
+            C4   2
+            C42   2
+            C43   2
+            C44   2
+            C5   2
+            C52   2
+            C53   2
+            C54   2
+            C6   2
+            C7   2
+            C8   2
+            C9   2
+            P1   1
+            P1   15
+            P1   21
+            P1   27
+            P1   3
+            P1   33
+            P1   39
+            P1   45
+            P1   51
+            P1   57
+            P1   71
+            P1   75
+            P1   9
+            R1   2
+            U1   2
+            U1   7
+            U2   2
+            U2   7
+            U3   A1
+            U3   A10
+            U3   A2
+            U3   A9
+            U3   F1
+            U3   F10
+            U3   F2
+            U3   F9
+            U4   2
+            U4   7
+            U7   A1
+            U7   A10
+            U7   A2
+            U7   A9
+            U7   F1
+            U7   F10
+            U7   F2
+            U7   F9
+
+.ADD_TER   P1   MH     "/M2_Connector/MH1"
+.TER       R1   1
+
+.ADD_TER   C27   1     "/Power_top/MAXQuad-1/Vout4"
+.TER       C29   1
+            C31   1
+            L8   2
+
+.ADD_TER   C52   1     "/Power_top/MAXQuad-2/Vout4"
+.TER       C53   1
+            C54   1
+            L5   2
+
+.ADD_TER   C22   1     "/Power_top/MAXQuad-1/Vout2"
+.TER       C28   1
+            C30   1
+            L6   2
+
+.ADD_TER   C36   1     "/Power_top/MAXQuad-2/Vout2"
+.TER       C37   1
+            C38   1
+            L3   2
+
+.ADD_TER   C12   1     "/Power_top/MAXQuad-1/Vout1"
+.TER       C17   1
+            C19   1
+            L1   2
+
+.ADD_TER   C23   1     "/Power_top/MAXQuad-2/Vout1"
+.TER       C24   1
+            C26   1
+            L2   2
+
+.ADD_TER   C13   1     "/Power_top/MAXQuad-1/Vout3"
+.TER       C18   1
+            C25   1
+            L7   2
+
+.ADD_TER   C42   1     "/Power_top/MAXQuad-2/Vout3"
+.TER       C43   1
+            C44   1
+            L4   2
+
+.ADD_TER   L6   1     "/Power_top/MAXQuad-1/LX2"
+.TER       U3   B1
+            U3   B2
+
+.ADD_TER   L3   1     "/Power_top/MAXQuad-2/LX2"
+.TER       U7   B1
+            U7   B2
+
+.ADD_TER   L1   1     "/Power_top/MAXQuad-1/LX1"
+.TER       U3   E1
+            U3   E2
+
+.ADD_TER   L2   1     "/Power_top/MAXQuad-2/LX1"
+.TER       U7   E1
+            U7   E2
+
+.ADD_TER   L8   1     "/Power_top/MAXQuad-1/LX4"
+.TER       U3   E10
+            U3   E9
+
+.ADD_TER   L5   1     "/Power_top/MAXQuad-2/LX4"
+.TER       U7   E10
+            U7   E9
+
+.ADD_TER   C6   1     "Net-(U2-OUT)"
+.TER       U2   4
+
+.ADD_TER   L7   1     "/Power_top/MAXQuad-1/LX3"
+.TER       U3   B10
+            U3   B9
+
+.ADD_TER   L4   1     "/Power_top/MAXQuad-2/LX3"
+.TER       U7   B10
+            U7   B9
+
+.ADD_TER   C5   1     "Net-(U1-OUT)"
+.TER       U1   4
+
+.ADD_TER   C3   1     "Net-(U1-IN)"
+.TER       U1   3
+
+.ADD_TER   C4   1     "Net-(U2-IN)"
+.TER       U2   3
+
+.ADD_TER   C33   1     "Net-(U4-OUT)"
+.TER       U4   4
+
+.ADD_TER   C32   1     "Net-(U4-IN)"
+.TER       U4   3
+
+.END

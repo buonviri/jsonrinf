@@ -5,6 +5,7 @@
 .JOB “PCB - ENCODER TERM RESISTORS”
 
 .ADD_COM J12 “Encoder Inputs”
+.ATT_COM J12 attribute test
 .ADD_COM J13 “To DAQ”
 .ADD_COM R1 “120 Ohm”
 .ADD_COM R2 “120 Ohm”
