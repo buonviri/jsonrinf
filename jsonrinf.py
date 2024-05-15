@@ -12,7 +12,7 @@ if os.name == 'nt':  # clipboard generally only works in windows
         import pyperclip
         clipboard = True
     except:
-        print('\nRequires pyperclip. Use: pip install pyperclip\n')
+        print('\nRequires pyperclip. Use: pip install pyperclip')
         clipboard = False
 
 double_quotes = '"“”'  # this string includes the standard one, chr(34), as well as the left and right versions
@@ -102,9 +102,10 @@ def convert(lines):
 # end of convert()
 
 
+# start of script
 print()  # blank line to separate from prompt
 for filename in os.listdir():  # only look in current folder
-    lowername = filename.lower()
+    lowername = filename.lower()  # only used for checking extension
     if lowername.endswith('.frp') or lowername.endswith('.net'):
         name = filename[:-4]  # remove extension
         print('Writing: ' + name + '.dict')
@@ -112,17 +113,18 @@ for filename in os.listdir():  # only look in current folder
             info = convert(f.readlines())  # read entire file and pass as a list
         with open(name + '.dict', 'w') as f:
             formatted = pprint.pformat(info, indent=2, width=200)
-            f.write(formatted)  # write using pformat
-        print('Done.\n')
+            f.write(formatted + '\n')  # write using pformat
+        print('  Done\n')
 # end of main loop
 
 print('All double quotes have been removed:')
 for c in double_quotes:
-    print('  chr(' + str(ord(c)) + ')')
+    print('  ' + c + ' = chr(' + str(ord(c)) + ')')
 
 if clipboard:
     pyperclip.copy(formatted)
-    print('Info written to clipboard\n')
+    print('\nInfo written to clipboard')
 
+print()
 os.system("PAUSE")
 # EOF
