@@ -2,6 +2,11 @@ import os
 import re
 import pprint
 
+# generates JSON file and clipboard:
+#   header included
+#   components section
+#   nets section
+
 if os.name == 'nt':  # clipboard generally only works in windows
     try:
         import pyperclip
@@ -98,17 +103,17 @@ def convert(lines):
 
 
 print()  # blank line to separate from prompt
-for dirname, dirnames, filenames in os.walk('.'):
-    for filename in filenames:
-        if filename.endswith('.frp') or filename.endswith('.net'):
-            name = os.path.join(dirname, filename[:-4])  # remove extension
-            print('Writing: ' + name + '.dict')
-            with open(name + '.frp', 'r') as f:
-                info = convert(f.readlines())  # read entire file and pass as a list
-            with open(name + '.dict', 'w') as f:
-                formatted = pprint.pformat(info, indent=2, width=200)
-                f.write(formatted)  # write using pformat
-            print('Done.\n')
+for filename in os.listdir():  # only look in current folder
+    lowername = filename.lower()
+    if lowername.endswith('.frp') or lowername.endswith('.net'):
+        name = filename[:-4]  # remove extension
+        print('Writing: ' + name + '.dict')
+        with open(filename, 'r') as f:
+            info = convert(f.readlines())  # read entire file and pass as a list
+        with open(name + '.dict', 'w') as f:
+            formatted = pprint.pformat(info, indent=2, width=200)
+            f.write(formatted)  # write using pformat
+        print('Done.\n')
 # end of main loop
 
 print('All double quotes have been removed:')

@@ -1,7 +1,9 @@
+import os
 import ast
 import pyperclip
 
-refdes = 'U19'  # needs to check filename instead
+refdes = os.path.basename(__file__).split('.')[0]  # get script name without extension
+
 info_text = pyperclip.paste()
 info = ast.literal_eval(info_text)
 
@@ -19,4 +21,6 @@ print(pinstring)
 print('\nPin count: ' + str(len(pins)))
 pyperclip.copy(pinstring)
 
+print()
+os.system("PAUSE")
 # EOF
