@@ -2,6 +2,14 @@ import os
 import re
 import pprint
 
+if os.name == 'nt':  # clipboard generally only works in windows
+    try:
+        import pyperclip
+        clipboard = True
+    except:
+        print('\nRequires pyperclip. Use: pip install pyperclip\n')
+        clipboard = False
+
 double_quotes = '"“”'  # this string includes the standard one, chr(34), as well as the left and right versions
 
 
@@ -92,18 +100,24 @@ def convert(lines):
 print()  # blank line to separate from prompt
 for dirname, dirnames, filenames in os.walk('.'):
     for filename in filenames:
-        if filename.endswith('.frp'):
+        if filename.endswith('.frp') or filename.endswith('.net'):
             name = os.path.join(dirname, filename[:-4])  # remove extension
             print('Writing: ' + name + '.dict')
             with open(name + '.frp', 'r') as f:
                 info = convert(f.readlines())  # read entire file and pass as a list
             with open(name + '.dict', 'w') as f:
-                f.write(pprint.pformat(info, indent=2, width=200))  # write using pformat
+                formatted = pprint.pformat(info, indent=2, width=200)
+                f.write(formatted)  # write using pformat
             print('Done.\n')
 # end of main loop
 
 print('All double quotes have been removed:')
 for c in double_quotes:
     print('  chr(' + str(ord(c)) + ')')
+
+if clipboard:
+    pyperclip.copy(formatted)
+    print('Info written to clipboard\n')
+
 os.system("PAUSE")
 # EOF
