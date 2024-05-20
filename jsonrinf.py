@@ -105,8 +105,8 @@ def convert(lines):
 # start of script
 print()  # blank line to separate from prompt
 for filename in os.listdir():  # only look in current folder
-    lowername = filename.lower()  # only used for checking extension
-    if lowername.endswith('.frp') or lowername.endswith('.net'):
+    n = filename.lower()  # only used for checking extension
+    if n.endswith('.frp') or n.endswith('.net'):
         name = filename[:-4]  # remove extension
         print('Writing: ' + name + '.dict')
         with open(filename, 'r') as f:
