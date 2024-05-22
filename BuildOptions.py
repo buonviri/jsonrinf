@@ -28,7 +28,7 @@ for refdes in info['comps']:
             pass  # doesn't really do anything anyway
         else:
             print(refdes + ": " + a)
-            clip = clip + refdes + ',' + a + '\n'
+            clip = clip + refdes + '\t' + a + '\n'  # tab data for pasting into spreadsheet
 pyperclip.copy(clip)
 
 print()
