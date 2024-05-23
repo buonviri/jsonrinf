@@ -44,6 +44,7 @@ def convert(lines):
     device = 'UUU999'  # fake device
     pin = '123456'  # fake pin
     netname = 'HOMER SEZ NO NET (ERROR)'  # (hopefully) invalid netname
+    addcomcount = 0
     for rawline in lines:
         line = rawline.strip().replace('\t',' ')  # strip newline and spaces, replace tab with space
         if len(line) == 0:
@@ -59,6 +60,7 @@ def convert(lines):
         elif line[0:4] in keywords:  # matches known keyword
             lastline = line[0:4]  # save for next loop
             if line.startswith('.ADD_COM'):
+                addcomcount = addcomcount + 1
                 words = GetTokens(line[8:].strip())
                 device = words[0]  # refdes
                 devinfo = [x.strip(double_quotes) for x in words[1:]]  # list of remaining tokens with quotes removed
@@ -98,6 +100,7 @@ def convert(lines):
                 print('Bad line: ' + line)
         else:
             print('Bad line: ' + line)
+    print('  ADD_COM count: ' + str(addcomcount))
     return info
 # end of convert()
 
